@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/ZerLock/Epytodo/issues"
   },
-  "homepage": "https://github.com/ZerLock/Epytodo#readme"
+  "homepage": "https://github.com/ZerLock/Epytodo#readme",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
 }
