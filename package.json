@@ -2,10 +2,9 @@
   "name": "epytodo",
   "version": "1.0.0",
   "description": "api for epitech project",
-  "main": "src/index.js",
+  "main": "index.js",
   "scripts": {
-    "run": "node src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/index.js"
   },
   "repository": {
     "type": "git",
