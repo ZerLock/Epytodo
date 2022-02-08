@@ -1,0 +1,19 @@
+{
+  "name": "epytodo",
+  "version": "1.0.0",
+  "description": "api for epitech project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZerLock/Epytodo.git"
+  },
+  "author": "dubosclard leo & duc justin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZerLock/Epytodo/issues"
+  },
+  "homepage": "https://github.com/ZerLock/Epytodo#readme"
+}
