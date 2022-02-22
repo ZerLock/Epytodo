@@ -3,6 +3,8 @@ const dotenv = require('dotenv');
 const app = express();
 dotenv.config();
 
+const auth = require('./middleware/auth');
+
 const authRoutes = require('./routes/auth/auth');
 const userRoutes = require('./routes/user/user');
 const todosRoutes = require('./routes/totos/todos');
@@ -17,8 +19,8 @@ app.use((req, res, next) => {
 app.use(express.json());
 
 app.use('/', authRoutes);
-app.use('/user', userRoutes);
-app.use('/todo', todosRoutes);
+app.use('/user', auth, userRoutes);
+app.use('/todo', auth, todosRoutes);
 
 app.listen(process.env.PORT, () => {
     console.log(`App listenting on http://localhost:${process.env.PORT}`);

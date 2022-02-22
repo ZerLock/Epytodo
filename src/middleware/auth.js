@@ -1,12 +1,20 @@
-const express = require('express');
-const router = express.Router();
+const jwt = require('jsonwebtoken');
 
-router.post('/register', (req, res, next) => {
-    res.status(200).json({ message: 'register a new user' });
-});
-
-router.post('/login', (req, res) => {
-    res.status(200).json({ message: 'connect a user' });
-});
-
-module.exports = router;
+module.exports = (req, res, next) => {
+    try {
+        const token = req.headers.authorization.split(' ')[1];
+        jwt.verify(token, 'EPYTODO_TOKEN_KEY', (error, id) => {
+            if (error) {
+                res.status(401).json({ msg: 'Token is not valid' });
+                return;
+            }
+            if (req.body.id && req.body.id !== id) {
+                throw 'Invalid Credentials';
+            } else {
+                next();
+            }
+        });
+    } catch (error) {
+        res.status(401).json({ msg: 'No token, authorization denied' });
+    }
+};

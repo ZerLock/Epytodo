@@ -11,13 +11,8 @@ router.get('/todos', (req, res, next) => {
     next();
 });
 
-router.get('/:email', (req, res, next) => {
-    res.status(200).json({ message: 'view user information' });
-    next();
-});
-
-router.get('/:id', (req, res, next) => {
-    res.status(200).json({ message: 'view user information' });
+router.get('/:data', (req, res, next) => {
+    res.status(200).json({ message: 'view data' });
     next();
 });
 
