@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { get_all_todos, get_todo_by_id, add_new_todo, modify_toto_by_id, delete_todo_by_id } = require('./todos.query');
-const check_id = require('../../middleware/notFound');
+const { check_id } = require('../../middleware/notFound');
 
 router.get('/', (req, res, next) => {
     get_all_todos(res);

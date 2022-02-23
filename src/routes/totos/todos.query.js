@@ -10,7 +10,7 @@ exports.get_todo_by_id = (res, todo_id) => {
     db.execute('SELECT * FROM `todo` WHERE `id` = ?', [todo_id], (error, results, fields) => {
         if (error)
              return res.status(500).json({ msg: 'internal server error' });
-        res.status(200).json({ results });
+        res.status(200).json( results[0] );
     });
 };
 
