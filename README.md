@@ -73,12 +73,23 @@ In order to take full advantage of this project. It is important to know each of
 \* To access the protected routes, you need a token that can be retrieved via the ``/register`` and ``/login`` routes.<br>
 \** todo = task
 
----
+## Results
+|Label|Mark|
+|:---:|:--:|
+|Preliminaries|2/2|
+|Web Server|5/5|
+|Routes (does it exists)|3/3|
+|Routes (Is it well done)|3/3|
+|Password|1/1|
+|Token|3/3|
+|SQL DB|5/5|
 
 ## Bonuses
 
 We have several bonuses like, a **Postman collection**, an accessible **frontend** (on a version dating from 3 days before the rendering of the project) on [epuytodo.tk](https://epuytodo.tk) (code available on [github.com/ZerLock/epytodo_front](https://github.com/ZerLock/epytodo_front) )
 
-## Mainteners
+---
+
+## Developers
 - [Léo Dubosclard](https://www.github.com/ZerLock)
 - [Baptiste Leroyer](https://github.com/ZiplEix)
