@@ -3,14 +3,13 @@ const jwt = require('jsonwebtoken');
 module.exports = (req, res, next) => {
     try {
         const token = req.headers.authorization.split(' ')[1];
-        jwt.verify(token, 'EPYTODO_TOKEN_KEY', (error, id) => {
-            if (error) {
-                res.status(401).json({ msg: 'Token is not valid' });
-                return;
-            }
-            if (req.body.id && req.body.id !== id) {
+        jwt.verify(token, process.env.EPYTODO_SECRET, (error, id) => {
+            if (error)
+                return res.status(401).json({ msg: 'Token is not valid' });
+            if (req.body.id && req.body.id !== id)
                 throw 'Invalid Credentials';
-            } else {
+            else {
+                req.userID = id;
                 next();
             }
         });

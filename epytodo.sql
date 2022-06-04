@@ -9,18 +9,18 @@ CREATE TABLE IF NOT EXISTS user
     password VARCHAR(255) NOT NULL,
     name VARCHAR(255) NOT NULL,
     firstname VARCHAR(255) NOT NULL,
-    create_at DATETIME NOT NULL DEFAULT NOW(),
+    created_at DATETIME DEFAULT NOW(),
     PRIMARY KEY (id)
 );
 
 CREATE TABLE IF NOT EXISTS todo
 (
-    id BIGINT NOT NULL AUTO_INCREMENT,
+    id BIGINT unsigned NOT NULL AUTO_INCREMENT,
     title VARCHAR(255) NOT NULL,
     description text NOT NULL,
-    create_at DATETIME NOT NULL DEFAULT NOW(),
+    created_at DATETIME DEFAULT NOW(),
     due_time DATETIME NOT NULL,
-    status VARCHAR(255) NOT NULL,
+    status ENUM('not started', 'todo', 'in progress', 'done') NOT NULL DEFAULT 'not started',
     user_id BIGINT unsigned NOT NULL,
     PRIMARY KEY (id),
     FOREIGN KEY (user_id) REFERENCES user(id) ON DELETE CASCADE

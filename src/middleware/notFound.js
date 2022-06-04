@@ -10,9 +10,8 @@ exports.check_id = (req, res, next) => {
             else
                 res.status(404).json({ msg: 'Not found' });
         });
-    } else {
-        res.status(500).json({ msg: 'internal server error' });
-    }
+    } else
+        res.status(500).json({ msg: 'Intenal server error' });
 }
 
 exports.check_user_id = (req, res, next) => {
@@ -25,7 +24,6 @@ exports.check_user_id = (req, res, next) => {
             else
                 res.status(404).json({ msg: 'Not found' });
         });
-    } else {
-        res.status(500).json({ msg: 'internal server error' });
-    }
+    } else
+        res.status(500).json({ msg: 'Intenal server error' });
 }

@@ -16,27 +16,44 @@ Here is the recommended repository's structure used for this project (without bo
 
 ---
 
-As a bonus, we have made a Docker image (in ``bonus`` directory) so that you do not have to install all the dependencies that are useful for this project. The creation of the database is not included in the Docker image. We will guide you step by step to create it on **your** machine.
+To use the EpyTodo, you need to install the dependencies and launch it locally on your PC.
 
-- First, run the following commands in a terminal to create the Docker image on **your** machine
-```bash
-$ docker build -t epytodo .
+*Clone the project:*
+```
+git clone git@github.com:EpitechPromo2026/B-WEB-200-LYN-2-1-epytodo-baptiste.leroyer.git
+
+cd B-WEB-200-LYN-2-1-epytodo-baptiste.leroyer
 ```
 
-- Then, run this command to create the database
-```bash
-$ cat epytodo.sql | mysql -u root -p
+*Install all dependencies:*
+```
+npm install
 ```
 
-- Now, your can run the project using
-```bash
-$ docker run -p 8080:8080 epytodo
+*Create the database:*
+```
+cat epytodo.sql | mysql -u root -p
+```
+
+*Run the project:*
+```
+npm start
 ```
 
 Enjoy !
 
+---
 
-## Epytodo instructions routes
+## Specifications
+- In the environment variables, we use **MYSQL_PASSWORD** and not **MYSQL_ROOT_PASSWORD**. We wanted to do it as if it were a customer service. So each project has a different login which is not **ROOT** !
+
+- A regex.js file has been added in /src/config allowing us to have and use the regex globally in the project!
+
+- If the user does not specify the **PORT** in the environment variables or the port is already taken. The application will launch on port 3000.
+
+- The **routes** are named like those in the table on page 4 of the 2026 promo topic.
+ 
+## EpyTodo instructions routes
 In order to take full advantage of this project. It is important to know each of the routes and their use within the API.
 
 |Route              |Method|Protected|Description|
@@ -45,18 +62,23 @@ In order to take full advantage of this project. It is important to know each of
 |/login             |POST  |NO       |Connect a user|
 |/user              |GET   |YES      |View all user information|
 |/user/todos        |GET   |YES      |View all user tasks|
-|/user/:id or :email|GET   |YES      |View user information|
-|/user/:id          |PUT   |YES      |Update user information|
-|/user/:id          |DELETE|YES      |Delete user|
-|/todo              |GET   |YES      |View all the todo|
-|/todo/:id          |GET   |YES      |View the todo|
-|/todo              |POST  |YES      |Create a todo|
-|/todo/:id          |PUT   |YES      |Update a todo|
-|/todo/:id          |DELETE|YES      |Delete a todo|
+|/users/:id or :email|GET   |YES      |View user information|
+|/users/:id          |PUT   |YES      |Update user information|
+|/users/:id          |DELETE|YES      |Delete user|
+|/todos              |GET   |YES      |View all the todo|
+|/todos/:id          |GET   |YES      |View the todo|
+|/todos              |POST  |YES      |Create a todo|
+|/todos/:id          |PUT   |YES      |Update a todo|
+|/todos/:id          |DELETE|YES      |Delete a todo|
 \* To access the protected routes, you need a token that can be retrieved via the ``/register`` and ``/login`` routes.<br>
 \** todo = task
 
 ---
 
+## Bonuses
+
+We have several bonuses like, a **Postman collection**, an accessible **frontend** (on a version dating from 3 days before the rendering of the project) on [epuytodo.tk](https://epuytodo.tk) (code available on [github.com/ZerLock/epytodo_front](https://github.com/ZerLock/epytodo_front) )
+
 ## Mainteners
 - [Léo Dubosclard](https://www.github.com/ZerLock)
+- [Baptiste Leroyer](https://github.com/ZiplEix)
