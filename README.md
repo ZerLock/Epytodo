@@ -20,9 +20,9 @@ To use the EpyTodo, you need to install the dependencies and launch it locally o
 
 *Clone the project:*
 ```
-git clone git@github.com:EpitechPromo2026/B-WEB-200-LYN-2-1-epytodo-baptiste.leroyer.git
+git clone git@github.com:ZerLock/Epytodo.git
 
-cd B-WEB-200-LYN-2-1-epytodo-baptiste.leroyer
+cd EpyTodo
 ```
 
 *Install all dependencies:*
