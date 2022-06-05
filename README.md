@@ -10,9 +10,9 @@ Here is the recommended repository's structure used for this project (without bo
 
 ## Install and Run the project
 ### Requirements
-> - NodeJS
-> - MySQL or MariaDB
-> - PhpMyAdmin (optional, if you want to view your database)
+> - [NodeJS](https://nodejs.org/en/download/package-manager/)
+> - [MySQL](https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/) or [MariaDB](https://www.mariadbtutorial.com/getting-started/install-mariadb/)
+> - [PhpMyAdmin](https://docs.phpmyadmin.net/en/latest/setup.html) (optional, if you want to view your database)
 
 ---
 
